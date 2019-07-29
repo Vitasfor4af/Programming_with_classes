@@ -7,31 +7,44 @@ package by.epam.aggregationAndComposition.task3;
 public class Main {
 
 	public static void main(String[] args) {
-		City[] cities = new City[8];
-		Region[] regions = new Region[6];
-		District[] districts = new District[2];
-		districts[0] = new District("Frunzensky");
-		districts[1] = new District("Leninski");
-		cities[3] = new City("Minsk", true, true, districts);
-		cities[2] = new City("Grodno", false, true, districts);
-		cities[0] = new City("Brest", false, true, districts);
-		cities[5] = new City("Vitebsk", false, true, districts);
-		cities[6] = new City("Borisov", false, true, districts);
-		cities[4] = new City("Mogilev", false, true, districts);
-		cities[1] = new City("Gomel", false, true, districts);
-		cities[7] = new City("Smorgon", false, true, districts);
-		regions[2] = new Region("Grodno region");
-		regions[0] = new Region("Brest region");
-		regions[3] = new Region("Minsk region");
-		regions[1] = new Region("Gomel region");
-		regions[5] = new Region("Vitebsk region");
-		regions[4] = new Region("Mogilev region");
 
-		State state = new State("Belarus", 207.595, regions, cities);
-		state.getCapital();
-		System.out.println("regions number = " + state.getRegionsNumber());
-		System.out.println("Square = " + state.getSquare());
-		state.getRegionCenter();
+		State state = new State("Belarus", 207.595);
+		state.addRegion(new Region("Brest region"));
+		state.addRegion(new Region("Gomel region"));
+		state.addRegion(new Region("Grodno region"));
+		state.addRegion(new Region("Minsk region"));
+		state.addRegion(new Region("Mogilev region"));
+		state.addRegion(new Region("Vitebsk region"));
+
+		state.getRegionByName("Brest region").addCity(new City("Brest"));
+		state.getRegionByName("Gomel region").addCity(new City("Gomel"));
+		state.getRegionByName("Grodno region").addCity(new City("Grodno"));
+		state.getRegionByName("Minsk region").addCity(new City("Minsk"));
+		state.getRegionByName("Mogilev region").addCity(new City("Mogilev"));
+		state.getRegionByName("Vitebsk region").addCity(new City("Vitebsk"));
+
+		state.getRegionByName("Brest region").getCityByName("Brest").addDistrict(new District("Leninsky"));
+		state.getRegionByName("Gomel region").getCityByName("Gomel").addDistrict(new District("Sovetsky"));
+		state.getRegionByName("Grodno region").getCityByName("Grodno").addDistrict(new District("Oktyabrsky"));
+		state.getRegionByName("Minsk region").getCityByName("Minsk").addDistrict(new District("Partizanski"));
+		state.getRegionByName("Mogilev region").getCityByName("Mogilev").addDistrict(new District("Leninsky"));
+		state.getRegionByName("Vitebsk region").getCityByName("Vitebsk").addDistrict(new District("Zharzhevo"));
+
+		state.getRegionByName("Brest region")
+				.setRegionCenter(state.getRegionByName("Brest region").getCityByName("Brest"));
+		state.getRegionByName("Gomel region")
+				.setRegionCenter(state.getRegionByName("Gomel region").getCityByName("Gomel"));
+		state.getRegionByName("Grodno region")
+				.setRegionCenter(state.getRegionByName("Grodno region").getCityByName("Grodno"));
+		state.getRegionByName("Minsk region")
+				.setRegionCenter(state.getRegionByName("Minsk region").getCityByName("Minsk"));
+		state.getRegionByName("Mogilev region")
+				.setRegionCenter(state.getRegionByName("Mogilev region").getCityByName("Mogilev"));
+		state.getRegionByName("Vitebsk region")
+				.setRegionCenter(state.getRegionByName("Vitebsk region").getCityByName("Vitebsk"));
+		state.setCapital(state.getRegionByName("Minsk region").getCityByName("Minsk"));
+		
+		System.out.println(state.toString());
 	}
 
 }
