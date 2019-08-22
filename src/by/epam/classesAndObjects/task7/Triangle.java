@@ -24,7 +24,6 @@ public class Triangle {
 	}
 
 	public double getSideA() {
-
 		return Math.hypot(y2 - y1, x2 - x1);
 	}
 

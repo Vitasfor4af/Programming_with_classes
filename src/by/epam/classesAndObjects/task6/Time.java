@@ -5,6 +5,12 @@ public class Time {
 	private int minutes;
 	private int seconds;
 
+	public Time() {
+		this.hours = 0;
+		this.minutes = 0;
+		this.seconds = 0;
+	}
+
 	public Time(int hours, int minutes, int seconds) {
 		if (hours > 24 || hours < 0) {
 			this.hours = 0;

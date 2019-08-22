@@ -23,7 +23,7 @@ public class Main {
 		}
 	}
 
-	public static void sortTrainNumber(Train[] train) {
+	private static void sortTrainNumber(Train[] train) {
 		for (int i = train.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
 				if (train[j].getTrainNumber() > train[j + 1].getTrainNumber()) {
@@ -35,7 +35,7 @@ public class Main {
 		}
 	}
 
-	public static void sortPointName(Train[] train) {
+	private static void sortPointName(Train[] train) {
 		for (int i = train.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
 				if (train[j + 1].getPointName().compareTo(train[j].getPointName()) < 0) {
@@ -53,7 +53,7 @@ public class Main {
 		}
 	}
 
-	public static void getData(int trainNumber, Train[] train) {
+	private static void getData(int trainNumber, Train[] train) {
 		for (int i = 0; i < train.length; i++) {
 			if (trainNumber == train[i].getTrainNumber()) {
 				System.out.printf("\n%s %d", train[i].getPointName(), train[i].getDepartureTime());

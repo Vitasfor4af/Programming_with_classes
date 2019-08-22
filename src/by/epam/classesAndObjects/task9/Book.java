@@ -13,7 +13,7 @@ c) список книг, выпущенных после заданного г�
 public class Book {
 	private int id;
 	private String name;
-	private String Author;
+	private String author;
 	private String publishingHouse;
 	private int publishingYear;
 	private int pagesNumber;
@@ -24,7 +24,7 @@ public class Book {
 			int price, String bindingType) {
 		this.id = id;
 		this.name = name;
-		Author = author;
+		this.author = author;
 		this.publishingHouse = publishingHouse;
 		this.publishingYear = publishingYear;
 		this.pagesNumber = pagesNumber;
@@ -49,11 +49,11 @@ public class Book {
 	}
 
 	public String getAuthor() {
-		return Author;
+		return author;
 	}
 
 	public void setAuthor(String author) {
-		Author = author;
+		this.author = author;
 	}
 
 	public String getPublishingHouse() {
@@ -98,7 +98,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", name=" + name + ", Author=" + Author + ", publishingHouse=" + publishingHouse
+		return "Book [id=" + id + ", name=" + name + ", Author=" + author + ", publishingHouse=" + publishingHouse
 				+ ", publishingYear=" + publishingYear + ", pagesNumber=" + pagesNumber + ", price=" + price
 				+ "$, bindingType=" + bindingType + "]";
 	}

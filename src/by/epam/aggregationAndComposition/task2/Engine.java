@@ -20,6 +20,7 @@ public class Engine {
 
 	public void stopEngine() {
 		this.Started = false;
+		System.out.println("engine stopping");
 	}
 
 	public boolean isStarted() {

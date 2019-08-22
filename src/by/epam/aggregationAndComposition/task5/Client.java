@@ -2,8 +2,6 @@ package by.epam.aggregationAndComposition.task5;
 
 import java.util.Arrays;
 
-import by.epam.aggregationAndComposition.task4.Account;
-
 public class Client {
 	private final int DEFAULT = 1;
 	private String name;

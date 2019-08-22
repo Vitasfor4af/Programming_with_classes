@@ -13,7 +13,6 @@ public class State {
 	}
 
 	public State() {
-		super();
 		this.name = "Undefined";
 		this.capital = null;
 		this.square = 0;
@@ -22,10 +21,10 @@ public class State {
 	public State(String name, double square) {
 		if (name == null || name.equals("")) {
 			throw new IllegalArgumentException("State must have a name");
-		} else {
-			this.name = name;
-			this.square = square;
 		}
+		this.name = name;
+		this.square = square;
+
 	}
 
 	public void addRegion(Region region) {

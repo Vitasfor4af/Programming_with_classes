@@ -22,7 +22,7 @@ public class Main {
 		flightByWeekDay(airline, "Friday", 3);
 	}
 
-	public static void flightByPointName(Airline[] airline, String pointName) {
+	private static void flightByPointName(Airline[] airline, String pointName) {
 		for (int i = 0; i < airline.length; i++) {
 			if (airline[i].getPointName() == pointName) {
 				System.out.println(airline[i].getFlightNumber());
@@ -30,7 +30,7 @@ public class Main {
 		}
 	}
 
-	public static void flightByWeekDay(Airline[] airline, String weekDay) {
+	private static void flightByWeekDay(Airline[] airline, String weekDay) {
 		for (int i = 0; i < airline.length; i++) {
 			if (airline[i].getWeekDay() == weekDay) {
 				System.out.println(airline[i].getFlightNumber());
@@ -38,8 +38,8 @@ public class Main {
 		}
 	}
 
-	public static void flightByWeekDay(Airline[] airline, String weekDay, int departureTime) {
-		if(departureTime < 0) {
+	private static void flightByWeekDay(Airline[] airline, String weekDay, int departureTime) {
+		if (departureTime < 0) {
 			throw new IllegalArgumentException();
 		}
 		for (int i = 0; i < airline.length; i++) {

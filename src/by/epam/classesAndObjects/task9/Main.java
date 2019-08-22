@@ -22,7 +22,7 @@ public class Main {
 		bookByYear(book, 2008);
 	}
 
-	public static void bookByAuthor(Book[] book, String author) {
+	private static void bookByAuthor(Book[] book, String author) {
 		for (int i = 0; i < book.length; i++) {
 			if (book[i].getAuthor() == author) {
 				System.out.println(book[i].getName());
@@ -30,7 +30,7 @@ public class Main {
 		}
 	}
 
-	public static void bookByPublishing(Book[] book, String publishingHouse) {
+	private static void bookByPublishing(Book[] book, String publishingHouse) {
 		for (int i = 0; i < book.length; i++) {
 			if (book[i].getPublishingHouse() == publishingHouse) {
 				System.out.println(book[i].getName());
@@ -38,7 +38,7 @@ public class Main {
 		}
 	}
 
-	public static void bookByYear(Book[] book, int publishingYear) {
+	private static void bookByYear(Book[] book, int publishingYear) {
 		for (int i = 0; i < book.length; i++) {
 			if (book[i].getPublishingYear() > publishingYear) {
 				System.out.println(book[i].getName());

@@ -22,15 +22,13 @@ public class Main {
 		student[9] = new Student("Erema", "Z. D.", 10405715, 10);
 		getBestProgress(student);
 	}
-	
-	public static void getBestProgress(Student[] student) {
+
+	private static void getBestProgress(Student[] student) {
 		for (int i = 0; i < student.length; i++) {
-			if(student[i].getProgress() == 9 || student[i].getProgress() == 10) {
-				System.out.printf("\n%15s %d",student[i].getSurname(), student[i].getGroupNumber());
+			if (student[i].getProgress() == 9 || student[i].getProgress() == 10) {
+				System.out.printf("\n%15s %d", student[i].getSurname(), student[i].getGroupNumber());
 			}
 		}
 	}
-	
-	
 
 }

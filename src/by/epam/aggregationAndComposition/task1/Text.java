@@ -2,7 +2,11 @@ package by.epam.aggregationAndComposition.task1;
 
 public class Text {
 	private String caption;
-	private String bodyText = "";
+	private String bodyText;
+	
+	{
+		bodyText = "";
+	}
 
 	public Text(Word word) {
 		caption = word.getValue();
@@ -17,11 +21,11 @@ public class Text {
 	}
 
 	public void addBody(Word word) {
-		bodyText += " " + word.getValue();
+		bodyText += word.getValue();
 	}
 
 	public void addBody(Sentence sentence) {
-		bodyText += " " + sentence.getValue();
+		bodyText += sentence.getValue();
 	}
 
 	public String getBody() {

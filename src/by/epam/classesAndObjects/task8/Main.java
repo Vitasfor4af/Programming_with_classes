@@ -22,12 +22,10 @@ public class Main {
 		customer[2] = new Customer(7, "Arehov", "Peter", "Arnana", "Kis", 79888080, 413);
 		customer[3] = new Customer(6, "Zitrax", "Mihail", "Piterparlk", "Araba", 877856655, 789);
 		sort(customer);
-		for (int i = 0; i < customer.length; i++) {
-			System.out.println(customer[i]);
-		}
+		getCustomerArray(customer);
 	}
 
-	public static void sort(Customer[] customer) {
+	private static void sort(Customer[] customer) {
 		for (int i = customer.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
 				if (customer[j + 1].getSurname().compareTo(customer[j].getSurname()) < 0) {
@@ -39,7 +37,13 @@ public class Main {
 		}
 	}
 
-	public static void getCardNumberInRange(Customer[] customer, int lowerBound, int upperBound) {
+	private static void getCustomerArray(Customer[] customer) {
+		for (int i = 0; i < customer.length; i++) {
+			System.out.println(customer[i]);
+		}
+	}
+
+	private static void getCardNumberInRange(Customer[] customer, int lowerBound, int upperBound) {
 		for (int i = 0; i < customer.length; i++) {
 			if (customer[i].getCardNumber() >= lowerBound && customer[i].getCardNumber() <= upperBound) {
 				System.out.println(customer[i].getSurname());

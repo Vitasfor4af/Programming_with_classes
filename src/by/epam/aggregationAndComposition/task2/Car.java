@@ -64,12 +64,12 @@ public class Car {
 	public void chargeFuel(int fuel) {
 		int balance = this.maxFuel - this.fuel;
 		int availability = this.maxFuel - balance;
-		if (this.maxFuel == 0)
+		if (this.maxFuel == 0) {
 			System.out.println("Tank capacity not initialized");
-		else if (this.maxFuel < fuel)
+		} else if (this.maxFuel < fuel) {
 			System.out.println(
 					"The volume of the tank is " + this.maxFuel + " liters, it does not fit " + fuel + " liters");
-		else if (availability + fuel == this.maxFuel) {
+		} else if (availability + fuel == this.maxFuel) {
 			System.out.println("The machine is successfully refilled with " + fuel + " liters");
 		} else if (this.fuel == this.maxFuel && this.maxFuel - this.fuel != 0) {
 			System.out.println("Unable to fill " + fuel + " liters");

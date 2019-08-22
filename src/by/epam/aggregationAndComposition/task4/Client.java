@@ -53,7 +53,7 @@ public class Client {
 	public void sort() {
 		for (int i = accounts.length - 1; i >= 0; i--) {
 			for (int j = 0; j < i; j++) {
-				if (accounts[j + 1].getAccountName().compareTo(accounts[j].getAccountName()) < 0) {
+				if (accounts[j].getBalance() > accounts[j + 1].getBalance()) {
 					Account tmp = accounts[j];
 					accounts[j] = accounts[j + 1];
 					accounts[j + 1] = tmp;
